@@ -1,0 +1,19 @@
+# env
+.env
+.env.yaml
+.venv/
+venv/
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# vector store
+data/chroma/
+
+# editor
+.vscode/
+.idea/
+.DS_Store

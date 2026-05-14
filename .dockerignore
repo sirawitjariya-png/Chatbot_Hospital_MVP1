@@ -1,0 +1,12 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+.env.yaml
+logs/
+*.ipynb
+.git/
+.gitignore
+chatbot.tar

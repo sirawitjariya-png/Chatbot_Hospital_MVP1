@@ -28,28 +28,16 @@ The heart of the system is a **CRAG (Corrective RAG)** graph built with LangGrap
 
 ### Workflow diagram
 
-```
-User message
-     │
-     ▼
-┌─────────────┐
-│  supervisor │── smalltalk ──────────────────────────────────────────► END
-└──────┬──────┘── off_topic ─────────────────────────────────────────► END
-       │ rag
-       ▼
-┌─────────────┐   multi-query expansion (3 paraphrases, Thai↔EN)
-│   retrieve  │   → embed all variants → query ChromaDB (k=5 each)
-└──────┬──────┘   → pool unique chunks → Cohere rerank → top 5
-       ▼
-┌──────────────┐       ✓ relevant
-│ grade_chunks │ ──────────────────────────────────────► draft_answer ──┐
-└──────┬───────┘                                                        │
-       │ ✗ not relevant                                          (ENABLE_REFLECTION?)
-       ▼                                                    yes ─► reflect ─► END
-┌──────────────┐                                            no  ──────────► END
-│  web_search  │── (Tavily, hospital-scoped) ──► answer_web ─────────────► ↑
-└──────────────┘
-```
+<p align="center">
+  <img src="docs/architecture.svg" alt="Walailuk Hospital Chatbot — Agentic RAG Architecture (CRAG)" width="100%">
+</p>
+
+<details>
+<summary><b>ASCII fallback</b> (for terminal / mobile viewing)</summary>
+
+pic/architecture.png
+
+</details>
 
 ### Node descriptions
 

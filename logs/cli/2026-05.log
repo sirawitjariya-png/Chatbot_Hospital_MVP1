@@ -210,3 +210,185 @@
 
 ------------------------------------------------------------------------
 
+========================================================================
+  2026-05-15 11:20:00   user: cli
+========================================================================
+
+  ┌─ QUESTION
+  │  What is hospital name?
+
+  ┌─ ROUTING  →  RAG
+
+  ┌─ RETRIEVE (knowledge base)  —  3 chunk(s) found
+  │  ── chunk 1 (md) ────────────────────────────────────────────────
+  │  # Sample Hospital FAQ (placeholder)
+  │  
+  │  Replace this file with your real hospital content. The chatbot answers only from documents in `data/raw/` and URLs in `data/urls.txt`.
+  │  
+  │  ## Emergency
+  │  
+  │  - Dial 1669 for national emergency services in Thailand.
+  │  - Our ER is staffed 24/7 and accepts walk-ins without appointment.
+  │  - Ambulance service: +66-2-000-0001.
+  │  
+  │  ## Visitor Policy
+  │  
+  │  - Visiting hours: 10:00–20:00 daily.\n
+  │  - Maximum 2 visitors per patient at a time.
+  │  - Children under 12 are not permitted in inpatient wards.
+  │  
+  │  ## Parking
+  │  
+  │  - Free parking for outpatients (first 4 hours), validate at the OPD reception.
+  │  - Valet service available at the main entrance, 100 THB per visit.
+  │  ── chunk 2 (url) ───────────────────────────────────────────────
+  │  ข้อมูลติดต่อโรงพยาบาล
+  │  ที่อยู่
+  │  222 หมู่ 10 ต.ไทยบุรี อ.ท่าศาลา จ.นครศรีธรรมราช 80160
+  │  ติดต่อ
+  │  โทร : 0 7547 9999
+  │  E-mail : wuh@wu.ac.th
+  │  เวลาทำการ
+  │  จ – ศ เวลา 8.00-20.00 น.
+  │  ส – อา และวันหยุดนักขัตฤกษ์ เวลา 8.00-16.00 น.
+  │  แผนกอุบัติเหตุและฉุกเฉินเปิดบริการทุกวัน 24 ชั่วโมง
+  │  ── chunk 3 (url) ───────────────────────────────────────────────
+  │  วันจันทร์ ถึง วันศุกร์
+  │  เวลา 8.30-20.00 น.
+  │  วันเสาร์ วันอาทิตย์และ
+  │  วันหยุดนักขัตฤกษ์
+  │  เวลา 8.30-16.00 น.
+  │  เวลา 8.30-20.00 น.
+  │  วันเสาร์ วันอาทิตย์และ
+  │  วันหยุดนักขัตฤกษ์
+  │  เวลา 8.30-16.00 น.
+  │  วันจันทร์ ถึง วันเสาร์
+  │  เวลา 8.30-16.00 น
+  │  เวลา 8.30-16.00 น
+  │  บริการฉีดวัคซีน
+  │  1.วัคซีนป้องกันโควิด 19
+  │  2.วัคซีนไข้หวัดใญ่ตามฤดูกาล
+  │  ปีละครั้ง
+  │  วันเวลาบริการกรุณาติดต่อสอบถามล่วงหน้า
+  │  1.วัคซีนป้องกันโควิด 19
+  │  2.วัคซีนไข้หวัดใญ่ตามฤดูกาล
+  │  ปีละครั้ง
+  │  วันเวลาบริการกรุณาติดต่อสอบถามล่วงหน้า
+
+  ┌─ GRADE CHUNKS  →  ✗ not relevant — trying web search
+
+  ┌─ WEB SEARCH  (Tavily fallback)
+  │  query   : Walailuk What is hospital name?
+  │  results : 3 snippet(s)
+
+  ┌─ DRAFT ANSWER  (web search)
+  │  สวัสดีค่ะ ยินดีต้อนรับสู่โรงพยาบาลวลัยลักษณ์ พร้อมให้บริการคุณค่ะ 😊 / Hello! Welcome to Walailuk Hospital, we are happy to assist you.
+  │  
+  │  The hospital's name is "Walailak University Hospital" (Thai: โรงพยาบาลศูนย์การแพทย์มหาวิทยาลัยวลัยลักษณ์). If you need any more information or assistance, please feel free to ask!
+
+  ┌─ REFLECTION  (✎ Revised)
+
+  ┌─ FINAL ANSWER
+  │  สวัสดีค่ะ ยินดีต้อนรับสู่โรงพยาบาลวลัยลักษณ์ พร้อมให้บริการคุณค่ะ 😊 / Hello! Welcome to Walailak Hospital, we are happy to assist you.
+  │  
+  │  The hospital's name is "Walailak University Hospital" (Thai: โรงพยาบาลศูนย์การแพทย์มหาวิทยาลัยวลัยลักษณ์). If you need any more information or assistance, please feel free to ask!
+
+------------------------------------------------------------------------
+
+========================================================================
+  2026-05-15 11:36:50   user: cli
+========================================================================
+
+  ┌─ QUESTION
+  │  หหูคอจมูก เปิดกี่โมง
+
+  ┌─ ROUTING  →  RAG
+
+  ┌─ RETRIEVE (knowledge base)  —  3 chunk(s) found
+  │  ── chunk 1 (url) ───────────────────────────────────────────────
+  │  วันจันทร์ ถึง วันศุกร์
+  │  เวลา 8.30-20.00 น.
+  │  วันเสาร์ วันอาทิตย์และ
+  │  วันหยุดนักขัตฤกษ์
+  │  เวลา 8.30-16.00 น.
+  │  เวลา 8.30-20.00 น.
+  │  วันเสาร์ วันอาทิตย์และ
+  │  วันหยุดนักขัตฤกษ์
+  │  เวลา 8.30-16.00 น.
+  │  วันจันทร์ ถึง วันเสาร์
+  │  เวลา 8.30-16.00 น
+  │  เวลา 8.30-16.00 น
+  │  บริการฉีดวัคซีน
+  │  1.วัคซีนป้องกันโควิด 19
+  │  2.วัคซีนไข้หวัดใญ่ตามฤดูกาล
+  │  ปีละครั้ง
+  │  วันเวลาบริการกรุณาติดต่อสอบถามล่วงหน้า
+  │  1.วัคซีนป้องกันโควิด 19
+  │  2.วัคซีนไข้หวัดใญ่ตามฤดูกาล
+  │  ปีละครั้ง
+  │  วันเวลาบริการกรุณาติดต่อสอบถามล่วงหน้า
+  │  ── chunk 2 (url) ───────────────────────────────────────────────
+  │  ข้อมูลติดต่อโรงพยาบาล
+  │  ที่อยู่
+  │  222 หมู่ 10 ต.ไทยบุรี อ.ท่าศาลา จ.นครศรีธรรมราช 80160
+  │  ติดต่อ
+  │  โทร : 0 7547 9999
+  │  E-mail : wuh@wu.ac.th
+  │  เวลาทำการ
+  │  จ – ศ เวลา 8.00-20.00 น.
+  │  ส – อา และวันหยุดนักขัตฤกษ์ เวลา 8.00-16.00 น.
+  │  แผนกอุบัติเหตุและฉุกเฉินเปิดบริการทุกวัน 24 ชั่วโมง
+  │  ── chunk 3 (md) ────────────────────────────────────────────────
+  │  # Sample Hospital FAQ (placeholder)
+  │  
+  │  Replace this file with your real hospital content. The chatbot answers only from documents in `data/raw/` and URLs in `data/urls.txt`.
+  │  
+  │  ## Emergency
+  │  
+  │  - Dial 1669 for national emergency services in Thailand.
+  │  - Our ER is staffed 24/7 and accepts walk-ins without appointment.
+  │  - Ambulance service: +66-2-000-0001.
+  │  
+  │  ## Visitor Policy
+  │  
+  │  - Visiting hours: 10:00–20:00 daily.\n
+  │  - Maximum 2 visitors per patient at a time.
+  │  - Children under 12 are not permitted in inpatient wards.
+  │  
+  │  ## Parking
+  │  
+  │  - Free parking for outpatients (first 4 hours), validate at the OPD reception.
+  │  - Valet service available at the main entrance, 100 THB per visit.
+
+  ┌─ GRADE CHUNKS  →  ✓ relevant
+
+  ┌─ DRAFT ANSWER  (knowledge base)
+  │  สวัสดีค่ะ ยินดีต้อนรับสู่โรงพยาบาลวลัยลักษณ์ พร้อมให้บริการคุณค่ะ 😊
+  │  
+  │  สำหรับเวลาทำการทั่วไปของโรงพยาบาลวลัยลักษณ์คือ  
+  │  - วันจันทร์ถึงวันศุกร์ เวลา 8.00–20.00 น.  
+  │  - วันเสาร์, วันอาทิตย์ และวันหยุดนักขัตฤกษ์ เวลา 8.00–16.00 น.
+  │  
+  │  แต่เนื่องจากไม่มีข้อมูลระบุเวลาทำการเฉพาะของแผนกหูคอจมูกโดยตรงในขณะนี้ แนะนำให้คุณติดต่อสอบถามล่วงหน้าที่  
+  │  โทรศัพท์: 0 7547 9999  
+  │  เพื่อความชัดเจนและได้รับข้อมูลล่าสุดค่ะ
+  │  
+  │  หากมีอะไรเพิ่มเติม ยินดีให้คำปรึกษาเสมอนะคะ
+
+  ┌─ REFLECTION  (✓ Accepted as-is)
+
+  ┌─ FINAL ANSWER
+  │  สวัสดีค่ะ ยินดีต้อนรับสู่โรงพยาบาลวลัยลักษณ์ พร้อมให้บริการคุณค่ะ 😊
+  │  
+  │  สำหรับเวลาทำการทั่วไปของโรงพยาบาลวลัยลักษณ์คือ  
+  │  - วันจันทร์ถึงวันศุกร์ เวลา 8.00–20.00 น.  
+  │  - วันเสาร์, วันอาทิตย์ และวันหยุดนักขัตฤกษ์ เวลา 8.00–16.00 น.
+  │  
+  │  แต่เนื่องจากไม่มีข้อมูลระบุเวลาทำการเฉพาะของแผนกหูคอจมูกโดยตรงในขณะนี้ แนะนำให้คุณติดต่อสอบถามล่วงหน้าที่  
+  │  โทรศัพท์: 0 7547 9999  
+  │  เพื่อความชัดเจนและได้รับข้อมูลล่าสุดค่ะ
+  │  
+  │  หากมีอะไรเพิ่มเติม ยินดีให้คำปรึกษาเสมอนะคะ
+
+------------------------------------------------------------------------
+

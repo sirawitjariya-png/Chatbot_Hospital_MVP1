@@ -29,7 +29,7 @@ The heart of the system is a **CRAG (Corrective RAG)** graph built with LangGrap
 ### Workflow diagram
 
 <p align="center">
-  <img src="docs/architecture.svg" alt="Walailuk Hospital Chatbot — Agentic RAG Architecture (CRAG)" width="100%">
+  <img src="pic/architecture.svg" alt="Walailuk Hospital Chatbot — Agentic RAG Architecture (CRAG)" width="100%">
 </p>
 
 <details>
